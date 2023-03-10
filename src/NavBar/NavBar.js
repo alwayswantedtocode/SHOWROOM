@@ -15,7 +15,7 @@ const NavBar = () => {
 
   const removeSubMenu = (e) => {
     if (!e.target.classList.contains("navLink")) {
-      console.log(e.target);
+      // console.log(e.target);
       closeSubMenu();
     }
   };

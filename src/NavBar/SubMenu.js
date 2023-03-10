@@ -9,31 +9,70 @@ const SubMenu = () => {
     isSubMenuOpen,
     page: { Links, names },
   } = useGlobalContext();
-  const [column, setColumn] = useState("col-4");
+
+  const dropdownRef = useRef();
+
   useEffect(() => {
-    setColumn("col-4");
-    if (Links.length === 4) {
-      setColumn("col-4");
-    }
-    if (Links.column > 4) {
-      setColumn("col-4");
-    }
-  }, [Links]);
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeSubMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (openSubMenu && dropdownRef.current && window.pageYOffset > 0) {
+        closeSubMenu();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [openSubMenu, closeSubMenu]);
+
+  const clickLink = () => {
+    closeSubMenu();
+  };
+
   return (
-    <aside className={`${isSubMenuOpen ? "subMenu show" : "subMenu"}`}>
+    <aside
+      className={`${isSubMenuOpen ? "subMenu active" : "subMenu"}`}
+      ref={dropdownRef}
+      onClick={(e) => e.stopPropagation()}
+    >
       {/* <h4>{page}</h4> */}
 
       {Links.map((Link, firstIndex) => {
-        const { names } = Link;
+        const { names, path } = Link;
         return (
           <div className="brandContainer" key={firstIndex}>
-            <h3 className="brand-name">{names}</h3>
+            <NavLink
+              className="brand-name"
+              key={path}
+              to={path}
+              onClick={clickLink}
+            >
+              <h3>{names}</h3>
+            </NavLink>
             {/* <div className={`brandNav${column}`}> */}
             <div className="brandNav">
               {Link.subLinks.map((subLink, secondIndex) => {
                 const { image, Description, URL } = subLink;
                 return (
-                  <NavLink className="brand-image" key={secondIndex}>
+                  <NavLink
+                    className="brand-image"
+                    key={secondIndex}
+                    onClick={clickLink}
+                  >
                     <img src={image} alt={Description} className="image" />
                     <p>{Description}</p>
                   </NavLink>

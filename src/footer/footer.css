@@ -131,12 +131,143 @@ p {
  Footer Styles
 =====================
 */
+.footerSection {
+  position: relative;
+  width: 100%;
+  /* height: 90rem; */
+}
+
 .footer {
   position: absolute;
   width: 100%;
-  height: 17rem;
+  /* height: 100%; */
   left: 0px;
-  top: 188.43rem;
 
   background: #000000;
+}
+.footer-logo-info {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+.footer-info {
+  text-align: center;
+  color: #fff;
+  width: 10rem;
+  margin: 0.5rem;
+}
+.footer-info h5 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.footer-info li {
+  margin-bottom: 0.3rem;
+  font-size: 0.6rem;
+  color: rgb(226, 225, 225);
+}
+.footer-info li a {
+  text-decoration: none;
+  color: rgb(201, 201, 201);
+}
+.tail-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem;
+}
+.Footer-logo-Cont {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: transparent;
+  background: none;
+  padding: 0rem;
+  min-height: 3.5625rem;
+  /* Shadow/small */
+  box-shadow: 0px 1px 2px -1px rgba(16, 24, 40, 0.1);
+  filter: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1));
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.Footer-logo {
+  min-width: 3.7rem;
+  min-height: 3.125rem;
+  background-color: none;
+  position: relative;
+  /* Inside auto layout */
+  align-self: center;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.Footer-logo > .Footer-First-Circle {
+  min-height: 2.1875rem;
+  min-width: 2.1875rem;
+  position: absolute;
+  left: 4%;
+  top: 18.06%;
+  bottom: 20.1%;
+  border-radius: 50%;
+  background: #68dbff;
+}
+
+.Footer-logo > .Footer-Second-Circle {
+  min-height: 2.1875rem;
+  min-width: 2.1875rem;
+  mix-blend-mode: multiply;
+  position: absolute;
+  left: 32.5%;
+  top: 18.06%;
+  bottom: 20.1%;
+  border-radius: 47%;
+  background: #ff7917;
+}
+.Text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  align-self: center;
+  max-height: 3.125rem;
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-info {
+    text-align: center;
+    color: #fff;
+    width: 15rem;
+    margin: 0.5rem;
+  }
+  .footer-info h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .footer-info li {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 912px) {
+  .footer-info {
+    text-align: center;
+    color: #fff;
+    width: 15rem;
+    margin: 1.5rem;
+  }
+  .footer-info h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .footer-info li {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
 }

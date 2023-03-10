@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./NavBar/Navbar.css";
-import "./footer/footer.css";
+import "./Footer/footer.css";
 import "./Pages/LandingPage/LandingPage.css";
+import "./Pages/LandingPage/videoSlider/slider.css";
+// import "./Pages/Brands/BrandPages.css";
 import App from "./App";
 import { AppProvider } from "./GlobalContext";
-// import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,5 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useRef, useContext } from "react";
 import SubMenuLinks from "./NavBar/NavbarData";
+import data from "./Pages/LandingPage/Electrified/ElectricMercedes/Data";
+import Data from "./Pages/LandingPage/Electrified/ElectricToyota/data";
 
 const GlobalContext = React.createContext();
 
@@ -14,6 +16,7 @@ export const AppProvider = ({ children }) => {
     names: "",
   }); //refer to read.me
 
+  //SUB Menu
   const openMobileMenu = () => {
     setIsMobileMenuOpen(true);
   };
@@ -30,6 +33,7 @@ export const AppProvider = ({ children }) => {
   };
   const closeSubMenu = () => {
     setIsSubMenuOpen(false);
+    // window.scrollTo(0, 0); // set pageYOffset to zero
   };
 
   return (

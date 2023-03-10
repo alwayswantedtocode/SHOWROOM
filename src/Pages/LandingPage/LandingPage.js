@@ -1,36 +1,13 @@
 import React from "react";
-import VideoSlide from "./VideoSlide";
-
+import VideoSlide from "./videoSlider/VideoSlide";
+import VehiclesSlide from "./newVehicles/VehiclesSlide";
+import Electrified from "./Electrified/Electrified";
 const LandingPage = () => {
   return (
-    <section>
+    <section className="landing-page-container">
       <VideoSlide />
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-          nisi dolores dolorem perferendis maxime alias molestiae saepe ducimus
-          ratione at qui fuga minus incidunt necessitatibus debitis, sapiente
-          quae perspiciatis repudiandae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-          nisi dolores dolorem perferendis maxime alias molestiae saepe ducimus
-          ratione at qui fuga minus incidunt necessitatibus debitis, sapiente
-          quae perspiciatis repudiandae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-          nisi dolores dolorem perferendis maxime alias molestiae saepe ducimus
-          ratione at qui fuga minus incidunt necessitatibus debitis, sapiente
-          quae perspiciatis repudiandae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-          nisi dolores dolorem perferendis maxime alias molestiae saepe ducimus
-          ratione at qui fuga minus incidunt necessitatibus debitis, sapiente
-          quae perspiciatis repudiandae!
-        </p>
-      </div>
+      <VehiclesSlide />
+      <Electrified />
     </section>
   );
 };
